@@ -1,10 +1,22 @@
-# Godot MCP Server
+# Godot MCP Server (GMS)
 
-A Model Context Protocol (MCP) server for the Godot game engine that enables AI assistants to interact with and manipulate Godot projects programmatically.
+A basic Model Context Protocol (MCP) server for the Godot game engine that enables AI assistants to interact with and manipulate Godot projects.
+ This server, in general, uses the [Godot command line](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html) to work with projects, so no Godot plugins are needed.
+
+## Table of Contents
+- [Overview](#overview)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Available Tools](#available-tools)
+- [Architecture](#architecture)
+- [How It Works](#how-it-works)
+- [Development](#development)
+- [Example using Claude Desktop - Mac](#example-using-claude-desktop---mac)
+- [License](#license)
 
 ## Overview
 
-The Godot MCP Server provides a bridge between AI assistants (like Claude) and the Godot game engine. It allows AI models to:
+The GMS provides a bridge between AI assistants (like Claude) and the Godot game engine. It allows AI models to:
 
 - Create and manage Godot projects
 - Launch the Godot editor
@@ -25,7 +37,7 @@ This server implements the [Model Context Protocol](https://github.com/anthropic
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/godot-mcp-server.git
+   git clone https://github.com/matula/godot-mcp-server.git
    cd godot-mcp-server
    ```
 
@@ -86,7 +98,7 @@ npm run inspector
 
 ### Using with Claude Desktop
 
-You can integrate the Godot MCP Server with Claude Desktop by adding it to the Claude Desktop configuration:
+You can integrate the GMS with Claude Desktop by adding it to the Claude Desktop configuration:
 
 1. Locate the Claude Desktop configuration file:
    - Generally on macOS: `/Users/{username}/Library/Application Support/Claude/claude_desktop_config.json`
@@ -114,7 +126,7 @@ You can integrate the Godot MCP Server with Claude Desktop by adding it to the C
 
 ## Available Tools
 
-The Godot MCP Server provides the following tools:
+The GMS provides the following tools:
 
 ### Godot Tools
 
@@ -136,7 +148,7 @@ The Godot MCP Server provides the following tools:
 
 ## Architecture
 
-The Godot MCP Server is built with a modular architecture:
+The GMS is built with a modular architecture:
 
 1. **MCP Server Core**: Uses the `@modelcontextprotocol/sdk` to create a server that communicates with AI assistants.
 
@@ -174,6 +186,19 @@ The Godot MCP Server is built with a modular architecture:
 ```bash
 npm run build
 ```
+
+## Example using Claude Desktop - Mac
+
+In the tools, you should see the active MCP:
+
+![claude-desktop-tools.png](claude-desktop-tools.png)
+
+Here's an example prompt:
+
+![claude-desktop-example-prompt.png](claude-desktop-example-prompt.png)
+
+If you're interested, [here's the full code](https://github.com/matula/example-godot-rpg) that was created with that prompt. I tried to run it 
+and there were errors, but it looks fixable.
 
 ## License
 
